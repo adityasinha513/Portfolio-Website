@@ -1,80 +1,87 @@
-<<<<<<< HEAD
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+# Aditya Sinha - Portfolio Website 🚀
 
-<br/>
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-<center>
+## 🎯 About Me
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+I am a passionate Computer Science student at Jaypee University, set to graduate in 2025. With a strong foundation in web development and a keen interest in creating impactful digital solutions, I've gained valuable experience through internships at TRANSLAB.IO and BLACK CRAB IT PVT LTD.
 
-</center>
+## 🛠️ Built With
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
-</h3>
-
-## TL;DR
-
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
-
-## Built With
-
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
-
-This project was built using these technologies.
+This portfolio is crafted with modern technologies:
 
 - React.js
 - Node.js
 - Express.js
+- React-Bootstrap
 - CSS3
-- VsCode
-- Vercel
+- VSCode
+- GitHub Pages
 
-## Features
+## ✨ Features
 
-**📖 Multi-Page Layout**
+- 📱 Fully Responsive Design
+- 🎨 Modern UI with React-Bootstrap
+- 💼 Professional Project Showcase
+- 📄 Downloadable Resume
+- 📧 Interactive Contact Form
+- 🌐 Social Media Integration
+- 🎯 Skills & Experience Section
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+## 🚀 Live Demo
 
-**📱 Fully Responsive**
+Experience the live version: [Portfolio Website](https://adityasinha513.github.io/Portfolio-Website)
 
-## Getting Started
+## 💻 Getting Started
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+To run this portfolio locally:
 
-## 🛠 Installation and Setup Instructions
+1. Clone the repository
+   ```sh
+   git clone https://github.com/adityasinha513/Portfolio-Website.git
+   ```
 
-1. Installation: `npm install`
+2. Install dependencies
+   ```sh
+   npm install
+   ```
 
-2. In the project directory, you can run: `npm start`
+3. Start the development server
+   ```sh
+   npm start
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+4. Deploy to GitHub Pages
+   ```sh
+   npm run deploy
+   ```
 
-## Usage Instructions
+## 📱 Key Sections
 
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
+- **Home**: Welcome section with introduction
+- **About**: My background, skills, and experience
+- **Projects**: Showcase of my technical projects
+- **Resume**: 
+  - View/Download Resume
+  - Contact Form for professional inquiries
 
-### Show your support
+## 📬 Contact Form
 
-Give a ⭐ if you like this website!
+The integrated contact form allows:
+- Direct message submission
+- Professional inquiries
+- Collaboration opportunities
+- Project discussions
 
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
-=======
-# Portfolio-Website
->>>>>>> e99dd98452d1c480a51999bbba1be0c08fc296cd
+## 🤝 Connect With Me
+
+- Email: adityasinha513@gmail.com
+- GitHub: [adityasinha513](https://github.com/adityasinha513)
+
+## 🙏 Acknowledgments
+
+- [React-Bootstrap](https://react-bootstrap.github.io/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [GitHub Pages](https://pages.github.com/)
