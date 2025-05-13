@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import Github from "./Github.jsx";
+import Github from "./Github.js";
 import Techstack from "./Techstack";
 import AboutCard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";

@@ -59,10 +59,11 @@ Portfolio Contact Form
   };
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
@@ -93,54 +94,76 @@ Portfolio Contact Form
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
               Contact <strong className="purple">Me</strong>
             </h1>
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
-              <Form.Group className="mb-3">
+            <Form noValidate validated={validated} onSubmit={handleSubmit} className="contact-form">
+              <Form.Group className="mb-3" controlId="formName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
-                  required
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your name"
+                  required
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    color: "white",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
+                    caretColor: "white"
+                  }}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter your name.
                 </Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group className="mb-3">
+              <Form.Group className="mb-3" controlId="formEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
-                  required
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
+                  required
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    color: "white",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
+                    caretColor: "white"
+                  }}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter a valid email address.
                 </Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group className="mb-3">
+              <Form.Group className="mb-3" controlId="formMessage">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
-                  required
                   as="textarea"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
                   placeholder="Enter your message"
+                  required
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    color: "white",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
+                    caretColor: "white"
+                  }}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter your message.
                 </Form.Control.Feedback>
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button 
+                variant="primary" 
+                type="submit"
+                style={{ marginTop: "20px" }}
+              >
                 <FaPaperPlane />&nbsp;Send Message
               </Button>
             </Form>
