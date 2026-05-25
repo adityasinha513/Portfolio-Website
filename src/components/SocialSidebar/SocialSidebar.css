@@ -1,0 +1,146 @@
+.social-sidebar {
+  position: fixed;
+  left: 1.1rem;
+  top: 50%;
+  z-index: 150;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+  .social-sidebar {
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .social-sidebar {
+    left: 1.7rem;
+  }
+}
+
+.social-sidebar__sections {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0.5rem 0;
+}
+
+.social-sidebar__sections::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0.72rem;
+  bottom: 0.72rem;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, transparent, rgba(125, 249, 255, 0.28), rgba(167, 139, 250, 0.2), transparent);
+}
+
+.social-sidebar__section,
+.social-sidebar__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: color 0.24s ease, transform 0.24s ease, filter 0.24s ease;
+}
+
+.social-sidebar__section {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.social-sidebar__node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  height: 9px;
+  width: 9px;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: #050816;
+  transition: border-color 0.24s ease, transform 0.24s ease;
+}
+
+.social-sidebar__node-active {
+  height: 9px;
+  width: 9px;
+  border-radius: inherit;
+  background: #7df9ff;
+  box-shadow: 0 0 15px rgba(125, 249, 255, 0.75);
+}
+
+.social-sidebar__section:hover .social-sidebar__node,
+.social-sidebar__section.is-active .social-sidebar__node {
+  border-color: #7df9ff;
+  transform: scale(1.2);
+}
+
+.social-sidebar__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.social-sidebar__link {
+  height: 1.3rem;
+  width: 1.3rem;
+  font-size: 1.05rem;
+}
+
+.social-sidebar__link:hover,
+.social-sidebar__section:hover {
+  color: #7df9ff;
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 10px rgba(125, 249, 255, 0.55));
+}
+
+.social-sidebar__tip {
+  position: absolute;
+  left: calc(100% + 0.8rem);
+  top: 50%;
+  padding: 0.36rem 0.6rem;
+  border: 1px solid rgba(125, 249, 255, 0.15);
+  border-radius: 0.5rem;
+  background: rgba(6, 10, 28, 0.92);
+  color: #cbd5e1;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translate(4px, -50%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.social-sidebar__section:hover .social-sidebar__tip,
+.social-sidebar__section:focus-visible .social-sidebar__tip,
+.social-sidebar__link:hover .social-sidebar__tip,
+.social-sidebar__link:focus-visible .social-sidebar__tip {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.social-sidebar--enter {
+  animation: sidebarFadeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+@keyframes sidebarFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

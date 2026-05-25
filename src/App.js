@@ -1,49 +1,115 @@
-import React, { useState, useEffect } from "react";
-import Preloader from "../src/components/Pre";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate
-} from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
-import "./style.css";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { lazy, Suspense, useEffect, useState } from "react";
+import "./styles/globals.css";
+
+import Loader from "./components/Loader/Loader";
+import StarsBackground from "./components/StarsBackground/StarsBackground";
+import SocialSidebar from "./components/SocialSidebar/SocialSidebar";
+import MobileDock from "./components/SocialSidebar/MobileDock";
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+
+const WhatIDo = lazy(() => import("./components/WhatIDo/WhatIDo"));
+const Experience = lazy(() => import("./components/Experience/Experience"));
+const Projects = lazy(() => import("./components/Projects/Projects"));
+const TechStack = lazy(() => import("./components/TechStack/TechStack"));
+const About = lazy(() => import("./components/About/About"));
+const Contact = lazy(() => import("./components/Contact/Contact"));
+
+const LOAD_DURATION = 1350;
+const EXIT_START = 1030;
+
+function SectionPlaceholder() {
+  return <div className="min-h-[16rem]" aria-hidden />;
+}
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      upadateLoad(false);
-    }, 1200);
+    const exitTimer = setTimeout(() => setExiting(true), EXIT_START);
+    const loadTimer = setTimeout(() => setLoading(false), LOAD_DURATION);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(exitTimer);
+      clearTimeout(loadTimer);
+    };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = loading ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [loading]);
+
+  useEffect(() => {
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!finePointer || reducedMotion) return undefined;
+
+    let frame = 0;
+    let latestEvent;
+
+    const move = (e) => {
+      latestEvent = e;
+      if (frame) return;
+
+      frame = window.requestAnimationFrame(() => {
+        document.body.style.setProperty("--x", `${latestEvent.clientX}px`);
+        document.body.style.setProperty("--y", `${latestEvent.clientY}px`);
+        frame = 0;
+      });
+    };
+    window.addEventListener("mousemove", move, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", move);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  if (loading) {
+    return <Loader exiting={exiting} />;
+  }
+
   return (
-    <Router>
-      <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/"/>} />
-        </Routes>
-        <Footer />
+    <>
+      {/* Fixed UI stays outside the animated content wrapper. */}
+      <StarsBackground />
+      <SocialSidebar />
+      <MobileDock />
+      <Navbar />
+
+      <div className="app-enter">
+        <main className="relative z-[1] pb-20 md:pb-0">
+          <Hero />
+          <div className="section-glow" />
+          <Suspense fallback={<SectionPlaceholder />}>
+            <WhatIDo />
+          </Suspense>
+          <div className="section-glow" />
+          <Suspense fallback={<SectionPlaceholder />}>
+            <Experience />
+          </Suspense>
+          <div className="section-glow" />
+          <Suspense fallback={<SectionPlaceholder />}>
+            <Projects />
+          </Suspense>
+          <div className="section-glow" />
+          <Suspense fallback={<SectionPlaceholder />}>
+            <TechStack />
+          </Suspense>
+          <div className="section-glow" />
+          <Suspense fallback={<SectionPlaceholder />}>
+            <About />
+          </Suspense>
+          <div className="section-glow" />
+          <Suspense fallback={<SectionPlaceholder />}>
+            <Contact />
+          </Suspense>
+        </main>
       </div>
-    </Router>
+    </>
   );
 }
 

@@ -1,0 +1,164 @@
+.nav{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:90px;
+
+padding:0 8%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+z-index:999;
+
+background:rgba(5,8,22,.4);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:800;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.logo::after{
+
+content:".";
+
+color:#7DF9FF;
+
+}
+
+.links{
+
+display:flex;
+gap:50px;
+
+}
+
+.links a{
+
+color:#bdbdbd;
+
+text-decoration:none;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.3s;
+
+position:relative;
+
+}
+
+.links a:hover{
+
+color:white;
+
+}
+
+.links a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-8px;
+left:0;
+
+height:2px;
+width:0;
+
+background:#7DF9FF;
+
+transition:.3s;
+
+}
+
+.links a:hover::after{
+
+width:100%;
+
+}
+
+.nav button{
+
+padding:14px 28px;
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,.1);
+
+background:rgba(255,255,255,.04);
+
+color:white;
+
+cursor:pointer;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.nav button:hover{
+
+transform:translateY(-3px);
+
+border:1px solid #7DF9FF;
+
+box-shadow:
+
+0 0 20px rgba(125,249,255,.2);
+
+}
+
+.nav-buttons{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.github-btn{
+
+text-decoration:none;
+color:white;
+
+padding:14px 28px;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.1);
+
+transition:.3s;
+
+}
+
+.github-btn:hover{
+
+transform:translateY(-3px);
+
+border:1px solid #7DF9FF;
+
+box-shadow:
+0 0 20px rgba(125,249,255,.2);
+
+}

@@ -1,0 +1,135 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(3, 7, 18, 0.97);
+  backdrop-filter: blur(14px);
+  opacity: 1;
+  transition: opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.loader--exit {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.loader__mark {
+  position: relative;
+  display: grid;
+  height: 82px;
+  width: 82px;
+  place-items: center;
+  animation: loaderEnter 0.48s cubic-bezier(0.22, 1, 0.36, 1) both,
+    loaderBreath 1.4s ease-in-out infinite;
+}
+
+.loader__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top-color: rgba(125, 249, 255, 0.84);
+  border-right-color: rgba(167, 139, 250, 0.48);
+  box-shadow: 0 0 24px rgba(125, 249, 255, 0.12);
+  animation: loaderSpin 1.35s linear infinite;
+}
+
+.loader__logo {
+  margin: 0;
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(125, 249, 255, 0.14);
+}
+
+.loader__logo span {
+  color: #7df9ff;
+  text-shadow: 0 0 14px rgba(125, 249, 255, 0.72);
+}
+
+.loader__track {
+  width: 92px;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  animation: loaderEnter 0.42s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.loader__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7df9ff, #a78bfa);
+  box-shadow: 0 0 14px rgba(125, 249, 255, 0.44);
+  transform-origin: left;
+  animation: loaderFill 1.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes loaderEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loaderBreath {
+  0%,
+  100% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.app-enter {
+  animation: appReveal 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes appReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader__mark,
+  .loader__ring,
+  .loader__track,
+  .loader__fill,
+  .app-enter {
+    animation: none;
+  }
+}

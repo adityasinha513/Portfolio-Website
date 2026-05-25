@@ -1,0 +1,66 @@
+.contact{
+
+padding:120px 8%;
+
+text-align:center;
+
+background:#050816;
+
+}
+
+.contact h2{
+
+font-size:50px;
+margin-bottom:20px;
+
+}
+
+.contact p{
+
+color:#aaa;
+margin-bottom:40px;
+
+}
+
+.contact-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+}
+
+.contact-buttons a{
+
+padding:18px 35px;
+
+text-decoration:none;
+
+color:white;
+
+border-radius:16px;
+
+background:
+
+rgba(255,255,255,.04);
+
+border:
+
+1px solid rgba(255,255,255,.1);
+
+transition:.4s;
+
+}
+
+.contact-buttons a:hover{
+
+transform:translateY(-6px);
+
+border:1px solid #7DF9FF;
+
+box-shadow:
+0 0 30px rgba(125,249,255,.15);
+
+}
