@@ -4,6 +4,9 @@
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+> **Portfolio V1 — Baseline (`v1.0.0`)**  
+> `v1.0.0` represents the original portfolio website and is preserved as the baseline. Future redesign work will happen under V2.
+
 ## 🎯 About Me
 
 I am a passionate Computer Science student at Jaypee University, set to graduate in 2025. With a strong foundation in web development and a keen interest in creating impactful digital solutions, I've gained valuable experience through internships at TRANSLAB.IO and BLACK CRAB IT PVT LTD.
